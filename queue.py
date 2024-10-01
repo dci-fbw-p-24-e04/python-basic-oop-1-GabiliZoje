@@ -15,25 +15,24 @@ class Queue:
         self._data = deque()
 
     def is_empty(self):
-        # TODO: Replace 'pass' with your code
-        pass
+        return len(self._data) == 0
 
     @property
     def size(self):
-        # TODO: Replace 'pass' with your code
-        pass
+        return len(self._data)
 
     def enqueue(self, item):
-        # TODO: Replace 'pass' with your code
-        pass
+        self._data.append(item)
 
     def peek(self):
-        # TODO: Replace 'pass' with your code
-        pass
-
+        if self.is_empty():
+            return Exception('Queue is empty')
+        return self._data[0]
+    
     def dequeue(self):
-        # TODO: Replace 'pass' with your code
-        pass
+        if self.is_empty():
+            raise Exception('This data structure is empty')
+        return self._data.popleft()
 
     def __str__(self) -> str:
         return str(self._data)
@@ -52,3 +51,4 @@ if __name__ == "__main__":
     print("Pop from Queue: ", q.dequeue())
     print("Size of Queue: ", q.size)
     print("Peek the Queue: ", q.peek())
+ # type: ignore
