@@ -1,6 +1,22 @@
+import math
+
 class Point:
-    # TODO: Replace 'pass' with your code
-    pass
+    def __init__(self,x=0,y=0):
+        self.x=x
+        self.y=y
+    
+
+    def move(self, x, y):
+        self.x = x
+        self.y = y
+
+    
+    def reset(self):
+        self.x, self.y=0, 0
+
+
+    def calc_distance(self,other):
+        return math.sqrt((other.x - self.x) ** 2 + (other.y - self.y) ** 2)
 
 
 if __name__ == "__main__":
